@@ -1,4 +1,4 @@
-const { CityRepository } = require("../repositories/index");
+const { CityRepository } = require("../repository/index");
 
 class CityService {
   constructor() {
@@ -7,7 +7,7 @@ class CityService {
 
   async createCity(data) {
     try {
-      const city = this.cityRepository.createCity(data);
+      const city = this.cityRepository.createCity({ name: data.name });
       return city;
     } catch (error) {
       console.log("Something wrong at service layer");

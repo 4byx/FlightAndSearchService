@@ -4,7 +4,7 @@ const { City } = require("../models/index");
 class CityRespository {
   async createCity({ name }) {
     try {
-      const city = await City({
+      const city = await City.create({
         name,
       });
       return city;
