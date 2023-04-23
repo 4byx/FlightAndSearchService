@@ -34,6 +34,8 @@ class CityRespository {
         where: {
           id: cityId,
         },
+        returning: true,
+        plain: true,
       });
       return city;
     } catch (err) {
@@ -44,7 +46,7 @@ class CityRespository {
 
   async getCity(cityId) {
     try {
-      const city = await City.findbyPK(cityId);
+      const city = await City.findByPk(cityId);
       return city;
     } catch (err) {
       console.log("Some error in the repository layer");
