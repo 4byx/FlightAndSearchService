@@ -15,6 +15,16 @@ class CityRespository {
     }
   }
 
+  async bulkCreateCities(data) {
+    try {
+      const cities = await City.bulkCreate(data.cities);
+      return cities;
+    } catch (error) {
+      console.log("Some error in the respository layer");
+      throw { err };
+    }
+  }
+
   async deleteCity(cityId) {
     try {
       await City.destroy({
