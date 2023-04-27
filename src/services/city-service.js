@@ -2,12 +2,12 @@ const { CityRepository } = require("../repository/index");
 
 class CityService {
   constructor() {
-    this.cityRepository = new CityRepository();
+    this.cityService = new CityRepository();
   }
 
   async createCity(data) {
     try {
-      const city = this.cityRepository.createCity({ name: data.name });
+      const city = await this.cityService.createCity({ name: data.name });
       return city;
     } catch (error) {
       console.log("Something wrong at service layer");
@@ -16,7 +16,7 @@ class CityService {
   }
   async deleteCity(cityId) {
     try {
-      await this.cityRepository.deleteCity(cityId);
+      await this.cityService.deleteCity(cityId);
     } catch (error) {
       console.log("Something wrong at service layer");
       throw { error };
@@ -25,7 +25,7 @@ class CityService {
 
   async updateCity(cityId, data) {
     try {
-      const city = await this.cityRepository.updateCity(cityId, data);
+      const city = await this.cityService.updateCity(cityId, data);
       return city;
     } catch (error) {
       console.log("Something wrong at service layer");
@@ -35,7 +35,7 @@ class CityService {
 
   async getCity(cityId) {
     try {
-      const city = await this.cityRepository.getCity(cityId);
+      const city = await this.cityService.getCity(cityId);
       return city;
     } catch (error) {
       console.log("Something wrong at service layer");
@@ -45,7 +45,7 @@ class CityService {
 
   async getAllCities(filter) {
     try {
-      const cities = await this.cityRepository.getAllCities({
+      const cities = await this.cityService.getAllCities({
         name: filter.name,
       });
       return cities;
@@ -57,7 +57,7 @@ class CityService {
 
   async bulkCreateCities(data) {
     try {
-      const cities = await this.cityRepository.bulkCreateCities({
+      const cities = await this.cityService.bulkCreateCities({
         cities: data.cities,
       });
       return cities;
