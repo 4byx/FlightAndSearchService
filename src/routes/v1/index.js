@@ -14,6 +14,11 @@ router.post("/city/bulk", CityController.bulkCreate);
 // airport
 router.post("/airport", AirportController.create);
 router.delete("/airport/:id", AirportController.destroy);
+router.get("/airport", AirportController.getAll);
+router.get("/airport/:id", AirportController.get);
+router.patch("/airport/:id", AirportController.update);
+router.post("/airport/bulk", AirportController.bulkCreate);
+
 // router.patch("/airport/:id", AirportController.update);
 
 module.exports = router;

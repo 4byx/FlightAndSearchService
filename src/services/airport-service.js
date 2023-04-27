@@ -55,9 +55,9 @@ class AirportService {
     }
   }
 
-  async bulkCreateAirports(data) {
+  async bulkCreate(data) {
     try {
-      const airport = await this.airportService.getBulkAirports();
+      const airport = await this.airportService.bulkCreate(data.airports);
       return airport;
     } catch (error) {
       console.log("something wrong at service layer");
@@ -67,7 +67,7 @@ class AirportService {
 
   async getAll() {
     try {
-      const airports = await this.airportService.getAll(data);
+      const airports = await this.airportService.getAll();
       return airports;
     } catch (error) {
       console.log("Something wrong at service layer");

@@ -15,9 +15,9 @@ class AirportRepository {
     }
   }
 
-  async bulkCreateAirports(data) {
+  async bulkCreate(data) {
     try {
-      const airports = await Airport.bulkCreate(data.airports);
+      const airports = await Airport.bulkCreate(data);
       return airports;
     } catch (error) {
       console.log("something wrong in repository layer");
