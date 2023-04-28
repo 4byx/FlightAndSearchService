@@ -13,36 +13,7 @@ module.exports = {
      * }], {});
      */
 
-    await queryInterface.bulkInsert(
-      "Airports",
-      [
-        {
-          name: "Indira Gandhi International Airport",
-          cityId: 3,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          name: "Mysuru Airport",
-          cityId: 2,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          name: "Mengaluru International Airport",
-          cityId: 2,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          name: "Kempegowda International Airport",
-          cityId: 2,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-      ],
-      {}
-    );
+    await queryInterface.bulkInsert("Airports", [], {});
   },
 
   async down(queryInterface, Sequelize) {
