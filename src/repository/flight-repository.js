@@ -60,6 +60,7 @@ class FlightRepository {
     } catch (error) {
       console.log("something wrong in repository layer");
       throw { error };
+      //added
     }
   }
 }
